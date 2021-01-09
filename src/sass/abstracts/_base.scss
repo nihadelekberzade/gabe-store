@@ -1,0 +1,50 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%; // 1 rem = 10px
+  box-sizing: border-box;
+}
+@import "./variables";
+body {
+  background: #141111;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  color: inherit;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none !important;
+}
+img {
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+input,
+button,
+textarea {
+  font-size: inherit;
+  outline: none;
+  border: none;
+  font-family: inherit;
+}
+input,
+textarea {
+  color: inherit;
+  display: block;
+}
+button {
+  cursor: pointer;
+}
