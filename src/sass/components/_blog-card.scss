@@ -1,0 +1,47 @@
+.blogcard {
+  &__img {
+    margin-bottom: 16px;
+    border-radius: 11px;
+    overflow: hidden;
+    width: 464.66px;
+  }
+  &__info {
+    display: flex;
+    align-items: center;
+  }
+  &__type {
+    background: rgba(251, 187, 67, 0.3);
+    border: 1px solid #fbbb43;
+    border-radius: 8px;
+    padding: 5px 8px 3px;
+    line-height: 1.2;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $clr-primary;
+    margin-right: 16px;
+    opacity: 0.4;
+  }
+  &__info {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  &__title {
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 18px;
+  }
+  &__subtitle {
+    margin-bottom: 16px;
+  }
+  &:hover &__img {
+    box-shadow: 0 0 0 2px $clr-primary;
+  }
+  &:hover &__date,
+  &:hover &__title,
+  &:hover &__subtitle {
+    color: $clr-primary;
+  }
+  * {
+    transition: all 0.3s;
+  }
+}

@@ -1,6 +1,74 @@
 import React from "react";
+import BlogCard from "../components/BlogCard";
+
+import OurChoice from "../layout/OurChoice";
 
 const HomePage = () => {
-  return <main className="homepage"></main>;
+  const articles = [
+    {
+      imageUrl: "https://static.gabestore.ru/blog_content/465x275_JZ6Q3aPpg8-V9lw0Ee_Ecpvw34Y1JPbp.jpg",
+      blogLink: "https://gabestore.ru/blog/da-kto-takoj-etot-vash-tobii-gaming",
+      blogType: "ТЕХНОЛОГИИ",
+      blogDate: "31.12.2020",
+      blogTitle: "Да кто такой этот ваш Tobii Gaming?!",
+      blogSubtitle: "Они точно знают, куда вы смотрите!",
+      blogView: 922,
+      blogCommentCount: 11,
+    },
+    {
+      imageUrl: "https://static.gabestore.ru/blog_content/465x275_NSsbN5p8LsrwflLujvyd3pT_6DblIg_k.jpg",
+      blogLink: "https://gabestore.ru/blog/rekomendovannye-igry-pro-ameriku",
+      blogType: "ПОДБОРКИ",
+      blogDate: "29.12.2020",
+      blogTitle: "Рекомендованные игры про Америку",
+      blogSubtitle: "Самый дешёвый вариант путешествия в Штаты",
+      blogView: 1917,
+      blogCommentCount: 18,
+    },
+    {
+      imageUrl: "https://static.gabestore.ru/blog_content/465x275_jvV5JxHNP4rdRDeu1vNhOrdc7KEkw2dX.jpg",
+      blogLink: "https://gabestore.ru/blog/da-kto-takoj-etot-vash-tobii-gaming",
+      blogType: "НЕ ОБЗОРЫ",
+      blogDate: "27.12.2020",
+      blogTitle: "Чего сложного в Devil May Cry?",
+      blogSubtitle: "Как Данте и компания уничтожают геймпады",
+      blogView: 1515,
+      blogCommentCount: 16,
+    },
+  ];
+
+  return (
+    <main className="homepage">
+      <OurChoice />
+      <section className="blogs">
+        <div className="wrapper">
+          <h2 className="section-title">СВЕЖЕЕ В БЛОГЕ</h2>
+          <div className="blogs__inner">
+            <div className="blog-list">
+              {articles.map((a, i) => (
+                <BlogCard
+                  imageUrl={a.imageUrl}
+                  blogLink={a.blogLink}
+                  blogType={a.blogType}
+                  blogDate={a.blogDate}
+                  blogTitle={a.blogTitle}
+                  blogSubtitle={a.blogSubtitle}
+                  blogViewCount={a.blogView}
+                  blogCommentCount={a.blogCommentCount}
+                  key={i}
+                />
+              ))}
+            </div>
+
+            <div className="txt-center">
+              <a className="btn btn--primary blogs__btn" href="/">
+                Все публикации
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
 };
 export default HomePage;

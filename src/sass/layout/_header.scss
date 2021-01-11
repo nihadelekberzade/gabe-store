@@ -8,7 +8,7 @@
   &__container {
     display: flex;
     &--search {
-      width: 1021px;
+      flex-basis: 1021px;
       form {
         flex: 1;
         position: relative;

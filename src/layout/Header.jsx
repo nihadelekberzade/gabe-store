@@ -72,7 +72,7 @@ const Header = () => (
       <div className="header__container header__container--search">
         <div className="header__btn btn">КАТАЛОГ ИГР</div>
         <form>
-          <input type="text" className="header__input" />
+          <input className="header__input" type="text" />
           <button className="header__search-btn"></button>
         </form>
       </div>

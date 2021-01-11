@@ -1,0 +1,11 @@
+.homepage {
+  .blogs {
+    .blog-list {
+      display: flex;
+      margin-bottom: 80px;
+      & > * {
+        margin: 0 16px;
+      }
+    }
+  }
+}

@@ -23,7 +23,6 @@
     margin-bottom: 24px;
     text-transform: uppercase;
     letter-spacing: 0.04em;
-
     span {
       display: block;
       transform: scaleX(0);
@@ -33,9 +32,11 @@
       transform-origin: right;
       height: 1px;
     }
-    &:hover span {
-      transform-origin: left;
-      transform: scaleX(1);
+    a {
+      &:hover span {
+        transform-origin: left;
+        transform: scaleX(1);
+      }
     }
   }
   &__social {
@@ -77,12 +78,17 @@
     justify-content: space-between;
     align-items: center;
 
+    a {
+      &:hover {
+        color: $clr-primary;
+      }
+    }
+
     &-policy {
       & > *:last-child {
         margin-left: 60px;
       }
     }
-
     &-payment {
       display: flex;
       &__item {
