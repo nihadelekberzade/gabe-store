@@ -77,10 +77,10 @@ const Header = () => (
         </form>
       </div>
       <div className="header__container header__container--icons">
-        <a className="header__icon header__icon--notification" href="/"></a>
-        <a className="header__icon header__icon--user" href="/"></a>
-        <a className="header__icon header__icon--favorite" href="/"></a>
-        <a className="header__icon header__icon--cart" href="/"></a>
+        <a className="header__icon" href="/"></a>
+        <a className="header__icon" href="/"></a>
+        <a className="header__icon" href="/"></a>
+        <a className="header__icon" href="/"></a>
       </div>
     </div>
   </header>

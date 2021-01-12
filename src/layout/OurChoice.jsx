@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const ChoiceCard = ({ url, title, price, discount, imageUrl }) => (
   <a href={url} className="choice-card">
@@ -67,13 +67,44 @@ const OurChoice = () => {
       <div className="wrapper">
         <h2 className="section-title">НАШ ВЫБОР</h2>
         <div className="ourchoice__inner">
-          <ul className="ourchoice__list ourchoice__list--active">
-            {choiceCards.map((card, index) => (
-              <li className={`ourchoice__list-item ourchoice__list-item--${++index}`} key={index} style={{ animationDelay: `${index * 0.3}s` }}>
-                <ChoiceCard title={card.title} price={card.price} discount={card.discount} imageUrl={card.imageUrl} url={card.url} />
-              </li>
-            ))}
-          </ul>
+          <div className="slider">
+            <div className={`slider__slide ${sliderIndex === 0 ? `slider__slide--active` : ``}`}>
+              <ul className="ourchoice__list">
+                {choiceCards.map((card, index) => (
+                  <li className={`ourchoice__list-item ourchoice__list-item--${++index}`} key={index} style={{ animationDelay: `${(index % 5) * 0.3}s` }}>
+                    <ChoiceCard title={card.title} price={card.price} discount={card.discount} imageUrl={card.imageUrl} url={card.url} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className={`slider__slide ${sliderIndex === 1 ? `slider__slide--active` : ``}`}>
+              <ul className="ourchoice__list">
+                {choiceCards.map((card, index) => (
+                  <li className={`ourchoice__list-item ourchoice__list-item--${++index}`} key={index} style={{ animationDelay: `${(index % 5) * 0.3}s` }}>
+                    <ChoiceCard title={card.title} price={card.price} discount={card.discount} imageUrl={card.imageUrl} url={card.url} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className={`slider__slide ${sliderIndex === 2 ? `slider__slide--active` : ``}`}>
+              <ul className="ourchoice__list">
+                {choiceCards.map((card, index) => (
+                  <li className={`ourchoice__list-item ourchoice__list-item--${++index}`} key={index} style={{ animationDelay: `${(index % 5) * 0.3}s` }}>
+                    <ChoiceCard title={card.title} price={card.price} discount={card.discount} imageUrl={card.imageUrl} url={card.url} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className={`slider__slide ${sliderIndex === 3 ? `slider__slide--active` : ``}`}>
+              <ul className="ourchoice__list">
+                {choiceCards.map((card, index) => (
+                  <li className={`ourchoice__list-item ourchoice__list-item--${++index}`} key={index} style={{ animationDelay: `${(index % 5) * 0.3}s` }}>
+                    <ChoiceCard title={card.title} price={card.price} discount={card.discount} imageUrl={card.imageUrl} url={card.url} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
           <div className="control">
             <div className="control__btn control__btn--up" onClick={() => handleControlBtnClick(-1)}></div>
             <div className="control__progressbar">

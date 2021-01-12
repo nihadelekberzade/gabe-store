@@ -285,7 +285,7 @@ const Footer = () => {
           {getMenu()}
           {getSocials()}
           {getNotification()}
-          {getOptions()}
+          {/* {getOptions()} */}
           {getCopyright()}
         </div>
       </div>

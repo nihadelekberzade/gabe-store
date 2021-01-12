@@ -1,6 +1,5 @@
 import React from "react";
 import BlogCard from "../components/BlogCard";
-
 import OurChoice from "../layout/OurChoice";
 
 const HomePage = () => {
