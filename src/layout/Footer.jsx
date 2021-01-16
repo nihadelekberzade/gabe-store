@@ -119,9 +119,8 @@ const Footer = () => {
         <ul className="footer__list">
           {links.map((link, index) => (
             <li className="footer__list-item" key={index}>
-              <a href={link.link}>
+              <a className="footer__link" href={link.link}>
                 {link.title}
-                <span></span>
               </a>
             </li>
           ))}

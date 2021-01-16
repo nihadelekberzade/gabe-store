@@ -1,8 +1,50 @@
 import React from "react";
 import BlogCard from "../components/BlogCard";
+import Catalog from "../layout/Catalog";
 import OurChoice from "../layout/OurChoice";
 
-const HomePage = () => {
+const Advantages = () => {
+  return (
+    <section className="advantages">
+      <div className="container">
+        <div className="advantages__inner">
+          <div className="advantage__item">
+            <img className="advantage__item-img" src="https://gabestore.ru/images/Gabestore_icons_discounts.png" alt="advantage item img" />
+            <div className="advantage__item-txt">
+              Скидки <br /> круглый год
+            </div>
+          </div>
+          <div className="advantage__item">
+            <img className="advantage__item-img" src="https://gabestore.ru/images/Gabestore_icons_support_24.png" alt="advantage item img" />
+            <div className="advantage__item-txt">
+              Круглосуточная <br /> поддержка
+            </div>
+          </div>
+          <div className="advantage__item">
+            <img className="advantage__item-img" src="https://gabestore.ru/images/Gabestore_icons_achievement_system.png" alt="advantage item img" />
+            <div className="advantage__item-txt">
+              Система <br /> достижений
+            </div>
+          </div>
+          <div className="advantage__item">
+            <img className="advantage__item-img" src="https://gabestore.ru/images/Gabestore_icons_active_community.png" alt="advantage item img" />
+            <div className="advantage__item-txt">
+              Активное <br /> коммьюнити
+            </div>
+          </div>
+          <div className="advantage__item">
+            <img className="advantage__item-img" src="https://gabestore.ru/images/Gabestore_icons_charity_events.png" alt="advantage item img" />
+            <div className="advantage__item-txt">
+              Любовь <br />к играм
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Blogs = () => {
   const articles = [
     {
       imageUrl: "https://static.gabestore.ru/blog_content/465x275_JZ6Q3aPpg8-V9lw0Ee_Ecpvw34Y1JPbp.jpg",
@@ -35,38 +77,44 @@ const HomePage = () => {
       blogCommentCount: 16,
     },
   ];
-
   return (
-    <main className="homepage">
-      <OurChoice />
-      <section className="blogs">
-        <div className="wrapper">
-          <h2 className="section-title">СВЕЖЕЕ В БЛОГЕ</h2>
-          <div className="blogs__inner">
-            <div className="blog-list">
-              {articles.map((a, i) => (
-                <BlogCard
-                  imageUrl={a.imageUrl}
-                  blogLink={a.blogLink}
-                  blogType={a.blogType}
-                  blogDate={a.blogDate}
-                  blogTitle={a.blogTitle}
-                  blogSubtitle={a.blogSubtitle}
-                  blogViewCount={a.blogView}
-                  blogCommentCount={a.blogCommentCount}
-                  key={i}
-                />
-              ))}
-            </div>
-
-            <div className="txt-center">
-              <a className="btn btn--primary blogs__btn" href="/">
-                Все публикации
-              </a>
-            </div>
+    <section className="blogs">
+      <div className="wrapper">
+        <h2 className="section-title">СВЕЖЕЕ В БЛОГЕ</h2>
+        <div className="blogs__inner">
+          <div className="blog-list">
+            {articles.map((a, i) => (
+              <BlogCard
+                imageUrl={a.imageUrl}
+                blogLink={a.blogLink}
+                blogType={a.blogType}
+                blogDate={a.blogDate}
+                blogTitle={a.blogTitle}
+                blogSubtitle={a.blogSubtitle}
+                blogViewCount={a.blogView}
+                blogCommentCount={a.blogCommentCount}
+                key={i}
+              />
+            ))}
+          </div>
+          <div className="txt-center">
+            <a className="btn btn--primary blogs__btn" href="/">
+              Все публикации
+            </a>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+  );
+};
+
+const HomePage = () => {
+  return (
+    <main className="homepage">
+      <Advantages />
+      <Catalog />
+      <OurChoice />
+      <Blogs />
     </main>
   );
 };

@@ -23,22 +23,25 @@
     margin-bottom: 24px;
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    span {
+  }
+  &__link {
+    &::after {
+      content: "";
       display: block;
-      transform: scaleX(0);
       margin-top: 3px;
-      transition: transform 0.3s;
+      transition: transform 0.4s;
       background-color: $clr-primary;
+      transform: scaleX(0);
       transform-origin: right;
       height: 1px;
+      width: 100%;
     }
-    a {
-      &:hover span {
-        transform-origin: left;
-        transform: scaleX(1);
-      }
+    &:hover::after {
+      transform-origin: left;
+      transform: scaleX(1);
     }
   }
+
   &__social {
     display: flex;
     justify-content: flex-end;

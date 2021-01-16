@@ -1,4 +1,31 @@
 .homepage {
+  .advantages {
+    padding-top: 80px;
+    &__inner {
+      display: flex;
+      margin-bottom: 80px;
+    }
+    .advantage {
+      &__item {
+        flex: 1;
+        text-align: center;
+        margin: 0 12px;
+        border: 2px solid rgba(251, 187, 67, 0.3);
+        border-radius: 12px;
+        padding: 40px;
+        background: linear-gradient(0deg, rgba(20, 17, 17, 0), rgba(20, 17, 17, 0.9));
+        &-img {
+          width: 40%;
+          transform: translateY(-100px);
+          margin: 0 auto -75px;
+        }
+        &-txt {
+          font-size: 18px;
+          color: $clr-primary;
+        }
+      }
+    }
+  }
   .blogs {
     .blog-list {
       display: flex;

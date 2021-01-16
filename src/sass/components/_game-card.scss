@@ -1,0 +1,51 @@
+.gamecard {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: border-color 0.3s;
+  border-radius: 11px;
+  overflow: hidden;
+  position: relative;
+  &__add-to-cart-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    padding: 7px 12px 4px;
+    width: max-content;
+  }
+  &__info {
+    padding: 8px;
+  }
+  &__name {
+    font-size: 16px;
+    margin-bottom: 8px;
+    min-height: 60px;
+  }
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-current {
+      font-size: 16px;
+    }
+    &-discount {
+      font-size: 16px;
+      text-align: center;
+      color: #000;
+      background: #fbbb43;
+      border-radius: 8px;
+      padding: 3px 8px 3px;
+    }
+  }
+  &:hover {
+    border-color: $clr-primary;
+  }
+  &:hover &__add-to-cart-btn {
+    opacity: 1;
+    visibility: visible;
+  }
+}

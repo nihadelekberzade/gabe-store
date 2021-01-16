@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import Data from "../db/ourchoice.json";
 const ChoiceCard = ({ url, title, price, discount, imageUrl }) => (
   <a href={url} className="choice-card">
     <div className="choice-card__img">
@@ -21,36 +21,10 @@ const ChoiceCard = ({ url, title, price, discount, imageUrl }) => (
 );
 
 const OurChoice = () => {
-  const choiceCards = [
-    {
-      title: "Star Wars Battlefront 2",
-      price: 23.96,
-      discount: "12",
-      imageUrl: "https://static.gabestore.ru/product/QKHTohFTK72nPIOhVr5y1kY6O3J_iG5h.jpg",
-      url: "/red-dead-redemption-2",
-    },
-    {
-      title: "Rainbow Six Siege",
-      price: 12.96,
-      discount: "67",
-      imageUrl: "https://static.gabestore.ru/product/UWTcq8mGlGJ7FYTIixFWAtxBtWpyObQz.jpg",
-      url: "/red-dead-redemption-2",
-    },
-    {
-      title: "Dark Souls III",
-      price: 7.96,
-      discount: "70",
-      imageUrl: "https://static.gabestore.ru/product/1Ze1yEWlh_ea0sIA7GNWW77XHp5zpB5T.jpg",
-      url: "/red-dead-redemption-2",
-    },
-    {
-      title: "Sid Meier’s Civilization VI – Rise and Fall",
-      price: 3.96,
-      discount: "42",
-      imageUrl: "https://static.gabestore.ru/product/oFJBHpQUf0TDCYsVnUJn0CGGR2vqKrw_.jpg",
-      url: "/red-dead-redemption-2",
-    },
-  ];
+  const [choiceCards, setChoiceCards] = useState([]);
+  useEffect(() => {
+    setChoiceCards(Data.choiceCards);
+  }, []);
   const [sliderIndex, setSliderIndex] = useState(0);
   const handleControlBtnClick = (value) => {
     if (sliderIndex + value === 4) {
@@ -61,6 +35,7 @@ const OurChoice = () => {
       setSliderIndex(sliderIndex + value);
     }
   };
+  const sliders = [1, 2, 3, 4];
 
   return (
     <section className="ourchoice">
@@ -68,42 +43,23 @@ const OurChoice = () => {
         <h2 className="section-title">НАШ ВЫБОР</h2>
         <div className="ourchoice__inner">
           <div className="slider">
-            <div className={`slider__slide ${sliderIndex === 0 ? `slider__slide--active` : ``}`}>
-              <ul className="ourchoice__list">
-                {choiceCards.map((card, index) => (
-                  <li className={`ourchoice__list-item ourchoice__list-item--${++index}`} key={index} style={{ animationDelay: `${(index % 5) * 0.3}s` }}>
-                    <ChoiceCard title={card.title} price={card.price} discount={card.discount} imageUrl={card.imageUrl} url={card.url} />
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className={`slider__slide ${sliderIndex === 1 ? `slider__slide--active` : ``}`}>
-              <ul className="ourchoice__list">
-                {choiceCards.map((card, index) => (
-                  <li className={`ourchoice__list-item ourchoice__list-item--${++index}`} key={index} style={{ animationDelay: `${(index % 5) * 0.3}s` }}>
-                    <ChoiceCard title={card.title} price={card.price} discount={card.discount} imageUrl={card.imageUrl} url={card.url} />
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className={`slider__slide ${sliderIndex === 2 ? `slider__slide--active` : ``}`}>
-              <ul className="ourchoice__list">
-                {choiceCards.map((card, index) => (
-                  <li className={`ourchoice__list-item ourchoice__list-item--${++index}`} key={index} style={{ animationDelay: `${(index % 5) * 0.3}s` }}>
-                    <ChoiceCard title={card.title} price={card.price} discount={card.discount} imageUrl={card.imageUrl} url={card.url} />
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className={`slider__slide ${sliderIndex === 3 ? `slider__slide--active` : ``}`}>
-              <ul className="ourchoice__list">
-                {choiceCards.map((card, index) => (
-                  <li className={`ourchoice__list-item ourchoice__list-item--${++index}`} key={index} style={{ animationDelay: `${(index % 5) * 0.3}s` }}>
-                    <ChoiceCard title={card.title} price={card.price} discount={card.discount} imageUrl={card.imageUrl} url={card.url} />
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {sliders.map((_, i) => {
+              return (
+                <div className={`slider__slide ${sliderIndex === i ? `slider__slide--active` : ``}`} key={i}>
+                  <ul className="ourchoice__list">
+                    {choiceCards.map((card, index) => {
+                      if (index >= i * 4 && index < (i + 1) * 4) {
+                        return (
+                          <li className={`ourchoice__list-item ourchoice__list-item--${(index % 4) + 1}`} key={index}>
+                            <ChoiceCard title={card.title} price={card.price} discount={card.discount} imageUrl={card.imageUrl} url={card.url} />
+                          </li>
+                        );
+                      }
+                    })}
+                  </ul>
+                </div>
+              );
+            })}
           </div>
           <div className="control">
             <div className="control__btn control__btn--up" onClick={() => handleControlBtnClick(-1)}></div>
