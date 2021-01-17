@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Data from "../db/ourchoice.json";
+
 const ChoiceCard = ({ url, title, price, discount, imageUrl }) => (
   <a href={url} className="choice-card">
     <div className="choice-card__img">
@@ -22,10 +23,11 @@ const ChoiceCard = ({ url, title, price, discount, imageUrl }) => (
 
 const OurChoice = () => {
   const [choiceCards, setChoiceCards] = useState([]);
+  const [sliderIndex, setSliderIndex] = useState(0);
+  const sliders = [1, 2, 3, 4];
   useEffect(() => {
     setChoiceCards(Data.choiceCards);
   }, []);
-  const [sliderIndex, setSliderIndex] = useState(0);
   const handleControlBtnClick = (value) => {
     if (sliderIndex + value === 4) {
       setSliderIndex(0);
@@ -35,7 +37,6 @@ const OurChoice = () => {
       setSliderIndex(sliderIndex + value);
     }
   };
-  const sliders = [1, 2, 3, 4];
 
   return (
     <section className="ourchoice">
@@ -62,11 +63,15 @@ const OurChoice = () => {
             })}
           </div>
           <div className="control">
-            <div className="control__btn control__btn--up" onClick={() => handleControlBtnClick(-1)}></div>
+            <div className="control__btn control__btn--up" onClick={() => handleControlBtnClick(-1)}>
+              <div> &uarr;</div>
+            </div>
             <div className="control__progressbar">
               <div className="control__progressbar-value" style={{ top: `${25 * sliderIndex}%` }}></div>
             </div>
-            <div className="control__btn control__btn--down" onClick={() => handleControlBtnClick(1)}></div>
+            <div className="control__btn control__btn--down" onClick={() => handleControlBtnClick(1)}>
+              <div>&darr;</div>
+            </div>
           </div>
         </div>
       </div>

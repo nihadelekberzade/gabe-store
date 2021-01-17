@@ -63,3 +63,41 @@
     background-color: red;
   }
 }
+.popup {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  display: flex;
+  &__wrapper {
+    flex: 0.2;
+  }
+
+  &--active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__inner {
+    flex: 1;
+    padding: 100px 40px;
+    display: flex;
+    background-color: rgba($color: #000000, $alpha: 0.9);
+  }
+  .menu {
+    flex: 1;
+    &--colored {
+      color: $clr-primary;
+    }
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}

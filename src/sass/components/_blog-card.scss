@@ -3,23 +3,22 @@
     margin-bottom: 16px;
     border-radius: 11px;
     overflow: hidden;
-    width: 464.66px;
   }
   &__info {
     display: flex;
     align-items: center;
   }
   &__type {
+    color: $clr-primary;
     background: rgba(251, 187, 67, 0.3);
-    border: 1px solid $clr-primary;
-    border-radius: 8px;
+    margin-right: 16px;
     padding: 5px 8px 3px;
+    text-transform: uppercase;
     line-height: 1.2;
     letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: $clr-primary;
-    margin-right: 16px;
     opacity: 0.4;
+    border-radius: 8px;
+    border: 1px solid $clr-primary;
   }
   &__info {
     display: flex;

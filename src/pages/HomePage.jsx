@@ -4,40 +4,45 @@ import Catalog from "../layout/Catalog";
 import OurChoice from "../layout/OurChoice";
 
 const Advantages = () => {
+  const advantages = [
+    {
+      imageUrl: "https://gabestore.ru/images/Gabestore_icons_discounts.png",
+      text1: "Скидки",
+      text2: "круглый год",
+    },
+    {
+      imageUrl: "https://gabestore.ru/images/Gabestore_icons_support_24.png",
+      text1: "Круглосуточная",
+      text2: "поддержка",
+    },
+    {
+      imageUrl: "https://gabestore.ru/images/Gabestore_icons_achievement_system.png",
+      text1: "Система",
+      text2: "достижений",
+    },
+    {
+      imageUrl: "https://gabestore.ru/images/Gabestore_icons_active_community.png",
+      text1: "Активное",
+      text2: "коммьюнити",
+    },
+    {
+      imageUrl: "https://gabestore.ru/images/Gabestore_icons_charity_events.png",
+      text1: "Любовь",
+      text2: "к играм",
+    },
+  ];
   return (
     <section className="advantages">
       <div className="container">
         <div className="advantages__inner">
-          <div className="advantage__item">
-            <img className="advantage__item-img" src="https://gabestore.ru/images/Gabestore_icons_discounts.png" alt="advantage item img" />
-            <div className="advantage__item-txt">
-              Скидки <br /> круглый год
+          {advantages.map((a, i) => (
+            <div className="advantage__item" key={i}>
+              <img className="advantage__item-img" src={a.imageUrl} alt="advantage item img" />
+              <div className="advantage__item-txt">
+                {a.text1} <br /> {a.text2}
+              </div>
             </div>
-          </div>
-          <div className="advantage__item">
-            <img className="advantage__item-img" src="https://gabestore.ru/images/Gabestore_icons_support_24.png" alt="advantage item img" />
-            <div className="advantage__item-txt">
-              Круглосуточная <br /> поддержка
-            </div>
-          </div>
-          <div className="advantage__item">
-            <img className="advantage__item-img" src="https://gabestore.ru/images/Gabestore_icons_achievement_system.png" alt="advantage item img" />
-            <div className="advantage__item-txt">
-              Система <br /> достижений
-            </div>
-          </div>
-          <div className="advantage__item">
-            <img className="advantage__item-img" src="https://gabestore.ru/images/Gabestore_icons_active_community.png" alt="advantage item img" />
-            <div className="advantage__item-txt">
-              Активное <br /> коммьюнити
-            </div>
-          </div>
-          <div className="advantage__item">
-            <img className="advantage__item-img" src="https://gabestore.ru/images/Gabestore_icons_charity_events.png" alt="advantage item img" />
-            <div className="advantage__item-txt">
-              Любовь <br />к играм
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
