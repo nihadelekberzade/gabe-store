@@ -3,7 +3,7 @@ import React from "react";
 const GameCard = ({ imageUrl, name, price, discount }) => (
   <div className="gamecard">
     <a href="/">
-      <img className="gamecard__add-to-favs-btn" />
+      <img className="gamecard__add-to-favs-btn" alt="favourite btn" />
       <a className="gamecard__add-to-cart-btn btn btn--primary" href="/">
         В корзину
       </a>
