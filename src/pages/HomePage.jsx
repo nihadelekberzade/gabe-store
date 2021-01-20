@@ -3,7 +3,7 @@ import BlogCard from "../components/BlogCard";
 import Catalog from "../layout/Catalog";
 import OurChoice from "../layout/OurChoice";
 
-const Advantages = () => {
+function Advantages() {
   const advantages = [
     {
       imageUrl: "https://gabestore.ru/images/Gabestore_icons_discounts.png",
@@ -47,9 +47,9 @@ const Advantages = () => {
       </div>
     </section>
   );
-};
+}
 
-const Blogs = () => {
+function Blogs() {
   const articles = [
     {
       imageUrl: "https://static.gabestore.ru/blog_content/465x275_JZ6Q3aPpg8-V9lw0Ee_Ecpvw34Y1JPbp.jpg",
@@ -111,9 +111,9 @@ const Blogs = () => {
       </div>
     </section>
   );
-};
+}
 
-const HomePage = () => {
+function HomePage() {
   return (
     <main className="homepage">
       <Advantages />
@@ -122,5 +122,5 @@ const HomePage = () => {
       <Blogs />
     </main>
   );
-};
+}
 export default HomePage;

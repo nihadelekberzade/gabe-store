@@ -1,66 +1,65 @@
 import React, { useState } from "react";
-
+import { images } from "../img/images";
 const Popup = ({ isActive, switchPopup }) => {
   return (
     <div className={`popup ${isActive ? `popup--active` : ``}`}>
-      <div className="popup__wrapper" onClick={switchPopup} />
       <div className="popup__inner">
-        <div className="menu menu--colored">
-          <h2 className="menu__title">ЛИДЕРЫ ПРОДАЖ</h2>
-          <ul className="menu__list">
-            <li className="menu__item">
-              <a href="/">ЛИДЕРЫ ПРОДАЖ</a>
-            </li>
-            <li className="menu__item">
-              <a href="/">ЛИДЕРЫ ПРОДАЖ</a>
-            </li>
-            <li className="menu__item">
-              <a href="/">ЛИДЕРЫ ПРОДАЖ</a>
-            </li>
-            <li className="menu__item">
-              <a href="/">ЛИДЕРЫ ПРОДАЖ</a>
-            </li>
-          </ul>
-          <ul className="menu__sub-list">
-            <li className="menu__sub-item">ЛИДЕРЫ ПРОДАЖ</li>
-            <li className="menu__sub-item">ЛИДЕРЫ ПРОДАЖ</li>
-            <li className="menu__sub-item">ЛИДЕРЫ ПРОДАЖ</li>
-            <li className="menu__sub-item">ЛИДЕРЫ ПРОДАЖ</li>
-          </ul>
-        </div>
-        <div className="menu">
-          <h2 className="menu__title">ЛИДЕРЫ ПРОДАЖ</h2>
-          <ul className="menu__list">
-            <li className="menu__item">
-              <a href="/">ЛИДЕРЫ ПРОДАЖ</a>
-            </li>
-            <li className="menu__item">
-              <a href="/">ЛИДЕРЫ ПРОДАЖ</a>
-            </li>
-            <li className="menu__item">
-              <a href="/">ЛИДЕРЫ ПРОДАЖ</a>
-            </li>
-            <li className="menu__item">
-              <a href="/">ЛИДЕРЫ ПРОДАЖ</a>
-            </li>
-          </ul>
-        </div>
-        <div className="menu">
-          <h2 className="menu__title">ЛИДЕРЫ ПРОДАЖ</h2>
-          <ul className="menu__list">
-            <li className="menu__item">
-              <a href="/">ЛИДЕРЫ ПРОДАЖ</a>
-            </li>
-            <li className="menu__item">
-              <a href="/">ЛИДЕРЫ ПРОДАЖ</a>
-            </li>
-            <li className="menu__item">
-              <a href="/">ЛИДЕРЫ ПРОДАЖ</a>
-            </li>
-            <li className="menu__item">
-              <a href="/">ЛИДЕРЫ ПРОДАЖ</a>
-            </li>
-          </ul>
+        <div className="popup__wrapper" onClick={switchPopup} />
+        <div className="popup__content">
+          <div className="menu menu--colored">
+            <h2 className="menu__title">ЛИДЕРЫ ПРОДАЖ</h2>
+            <ul className="menu__list">
+              <li className="menu__item">
+                <a href="/">НОВИНКИ</a>
+              </li>
+              <li className="menu__item">
+                <a href="/">ПРЕДЗАКАЗЫ</a>
+              </li>
+              <li className="menu__item">
+                <a href="/">СКИДКИ</a>
+              </li>
+              <li className="menu__item">
+                <a href="/">ПОДБОРКИ</a>
+              </li>
+            </ul>
+            <ul className="menu__sub-list">
+              <li className="menu__sub-item">О компании</li>
+            </ul>
+          </div>
+          <div className="menu">
+            <h2 className="menu__title">ЛИДЕРЫ ПРОДАЖ</h2>
+            <ul className="menu__list">
+              <li className="menu__item">
+                <a href="/">ЛИДЕРЫ ПРОДАЖ</a>
+              </li>
+              <li className="menu__item">
+                <a href="/">ЛИДЕРЫ ПРОДАЖ</a>
+              </li>
+              <li className="menu__item">
+                <a href="/">ЛИДЕРЫ ПРОДАЖ</a>
+              </li>
+              <li className="menu__item">
+                <a href="/">ЛИДЕРЫ ПРОДАЖ</a>
+              </li>
+            </ul>
+          </div>
+          <div className="menu">
+            <h2 className="menu__title">ЛИДЕРЫ ПРОДАЖ</h2>
+            <ul className="menu__list">
+              <li className="menu__item">
+                <a href="/">ЛИДЕРЫ ПРОДАЖ</a>
+              </li>
+              <li className="menu__item">
+                <a href="/">ЛИДЕРЫ ПРОДАЖ</a>
+              </li>
+              <li className="menu__item">
+                <a href="/">ЛИДЕРЫ ПРОДАЖ</a>
+              </li>
+              <li className="menu__item">
+                <a href="/">ЛИДЕРЫ ПРОДАЖ</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -142,7 +141,7 @@ const Header = () => {
           </a>
         </div>
         <div className="header__container header__container--search">
-          <div className="header__btn btn" onClick={switchPopup}>
+          <div className={`header__btn btn ${isPopupActive ? `header__btn--active` : ``}`} onClick={switchPopup}>
             КАТАЛОГ ИГР
           </div>
           <form>
@@ -151,13 +150,21 @@ const Header = () => {
           </form>
         </div>
         <div className="header__container header__container--icons">
-          <a className="header__icon" href="/"></a>
-          <a className="header__icon" href="/"></a>
-          <a className="header__icon" href="/"></a>
-          <a className="header__icon" href="/"></a>
+          <a className="header__icon" href="/">
+            <img src={images.notfication} alt="notification" />
+          </a>
+          <a className="header__icon" href="/">
+            <img src={images.user} alt="user" />
+          </a>
+          <a className="header__icon" href="/">
+            <img src={images.heart} alt="heart" />
+          </a>
+          <a className="header__icon" href="/">
+            <img src={images.cart} alt="cart" />
+          </a>
         </div>
-        <Popup isActive={isPopupActive} switchPopup={switchPopup} />
       </div>
+      <Popup isActive={isPopupActive} switchPopup={switchPopup} />
     </header>
   );
 };

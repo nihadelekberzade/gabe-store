@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Data from "../db/ourchoice.json";
-
+import { images } from "../img/images";
 const ChoiceCard = ({ url, title, price, discount, imageUrl }) => (
   <a href={url} className="choice-card">
     <div className="choice-card__img">
@@ -64,13 +64,13 @@ const OurChoice = () => {
           </div>
           <div className="control">
             <div className="control__btn control__btn--up" onClick={() => handleControlBtnClick(-1)}>
-              <div> &uarr;</div>
+              <img src={images.down_arrow} alt="arrow" />
             </div>
             <div className="control__progressbar">
               <div className="control__progressbar-value" style={{ top: `${25 * sliderIndex}%` }}></div>
             </div>
             <div className="control__btn control__btn--down" onClick={() => handleControlBtnClick(1)}>
-              <div>&darr;</div>
+              <img src={images.down_arrow} alt="arrow" />
             </div>
           </div>
         </div>

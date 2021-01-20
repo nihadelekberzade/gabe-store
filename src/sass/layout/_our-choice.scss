@@ -6,7 +6,7 @@
   &__list {
     display: grid;
     grid-gap: 32px;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 715px);
     grid-template-rows: 290px calc(140px - 32px) 290px;
   }
   &__list-item {
