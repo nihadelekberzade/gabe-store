@@ -3,11 +3,11 @@ import Data from "../db/ourchoice.json";
 import { images } from "../img/images";
 
 const ChoiceCard = ({ url, title, price, discount, imageUrl }) => (
-  <a href={url} className="choice-card">
+  <div className="choice-card">
     <div className="choice-card__img">
       <img src={imageUrl} alt="choice card img" />
     </div>
-    <div className="choice-card__inner">
+    <a className="choice-card__inner" href={url}>
       <div className="choice-card__info">
         <h2 className="choice-card__title">{title}</h2>
         <div className="choice-card__price">
@@ -18,8 +18,8 @@ const ChoiceCard = ({ url, title, price, discount, imageUrl }) => (
           </a>
         </div>
       </div>
-    </div>
-  </a>
+    </a>
+  </div>
 );
 
 const OurChoice = () => {
@@ -57,6 +57,7 @@ const OurChoice = () => {
                           </li>
                         );
                       }
+                      return <React.Fragment key={index}></React.Fragment>;
                     })}
                   </ul>
                 </div>

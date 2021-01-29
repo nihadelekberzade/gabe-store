@@ -36,6 +36,7 @@ const Hits = () => {
                       </li>
                     );
                   }
+                  return;
                 })}
               </ul>
             </div>
