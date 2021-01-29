@@ -48,7 +48,6 @@ function Advantages() {
     </section>
   );
 }
-
 function Blogs() {
   const articles = [
     {

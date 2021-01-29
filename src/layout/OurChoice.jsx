@@ -7,7 +7,7 @@ const ChoiceCard = ({ url, title, price, discount, imageUrl }) => (
     <div className="choice-card__img">
       <img src={imageUrl} alt="choice card img" />
     </div>
-    <a className="choice-card__inner" href={url}>
+    <div className="choice-card__inner">
       <div className="choice-card__info">
         <h2 className="choice-card__title">{title}</h2>
         <div className="choice-card__price">
@@ -18,7 +18,7 @@ const ChoiceCard = ({ url, title, price, discount, imageUrl }) => (
           </a>
         </div>
       </div>
-    </a>
+    </div>
   </div>
 );
 

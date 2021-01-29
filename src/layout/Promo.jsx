@@ -36,7 +36,7 @@ const Hits = () => {
                       </li>
                     );
                   }
-                  return;
+                  return <React.Fragment key={index} />;
                 })}
               </ul>
             </div>
