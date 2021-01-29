@@ -1,44 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import GameCard from "../components/GameCard";
+import Catalog_DB from "../db/catalog.json";
 
 const Catalog = () => {
+  const [topGames, setTopGames] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const tabs = ["Новинки", "Лидеры продаж", "Последние поступления", "Предзаказы"];
   const changeCurrentIndex = (newIndex) => {
     setCurrentIndex(newIndex);
   };
-  const topGames = [
-    {
-      imageUrl: "https://static.gabestore.ru/product/cWiz77h6dlKn4E10q3zVTp2DkMbB_hFl.jpg",
-      name: "Far Cry: 5",
-      price: 12,
-      discount: 60,
-    },
-    {
-      imageUrl: "https://static.gabestore.ru/product/Ey5gPO_dKHf3BVLQnsNYPCCoBDcl9wvc.jpg",
-      name: "Rainbow Six: Siege",
-      price: 12,
-      discount: 60,
-    },
-    {
-      imageUrl: "https://static.gabestore.ru/product/Ey5gPO_dKHf3BVLQnsNYPCCoBDcl9wvc.jpg",
-      name: "Rainbow Six: Siege",
-      price: 12,
-      discount: 60,
-    },
-    {
-      imageUrl: "https://static.gabestore.ru/product/Ey5gPO_dKHf3BVLQnsNYPCCoBDcl9wvc.jpg",
-      name: "Rainbow Six: Siege",
-      price: 12,
-      discount: 60,
-    },
-    {
-      imageUrl: "https://static.gabestore.ru/product/Ey5gPO_dKHf3BVLQnsNYPCCoBDcl9wvc.jpg",
-      name: "Rainbow Six: Siege",
-      price: 12,
-      discount: 60,
-    },
-  ];
+  useEffect(() => {
+    setTopGames(Catalog_DB.catalog);
+  }, []);
+
   return (
     <section className="catalog">
       <div className="wrapper">
@@ -53,7 +27,7 @@ const Catalog = () => {
           <ul className="catalog__list">
             {topGames.map((t, i) => (
               <li className="catalog__list-item" key={i}>
-                <GameCard imageUrl={t.imageUrl} name={t.name} price={t.price} discount={t.discount} />
+                <GameCard imageUrl={t.imageUrl} name={t.name} price={t.price} discount={t.discount} url={t.url} />
               </li>
             ))}
           </ul>

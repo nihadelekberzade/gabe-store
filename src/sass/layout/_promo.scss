@@ -1,0 +1,56 @@
+.promo {
+  min-height: 100vh;
+  background-color: darkslategrey;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  &__content {
+    max-height: 378px;
+  }
+  &__hits {
+    display: flex;
+    align-items: center;
+    position: relative;
+    &-title {
+      transform: rotate(-90deg);
+      position: absolute;
+      top: 60px;
+      left: -80px;
+    }
+    &-list {
+      display: flex;
+    }
+    &-item {
+      flex-basis: 240px;
+      &:not(:first-child) {
+        margin-left: 24px;
+      }
+      @for $i from 0 through 3 {
+        &:nth-child(#{$i}n) {
+          animation: disappear 0.4s both #{$i * 0.2s};
+        }
+      }
+    }
+    .slider {
+      width: 720px;
+      height: 380px;
+      &__slide {
+        transition-delay: 1s;
+        &--active {
+          ul li {
+            @for $i from 0 through 3 {
+              &:nth-child(#{$i}n) {
+                animation: appear 0.4s both #{$i * 0.2s + 0.8s};
+              }
+            }
+          }
+        }
+      }
+    }
+    .control {
+      &__progressbar-value {
+        height: 20%;
+      }
+    }
+  }
+}

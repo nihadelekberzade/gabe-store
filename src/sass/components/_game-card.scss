@@ -4,6 +4,9 @@
   border-radius: 11px;
   overflow: hidden;
   position: relative;
+  &__add-to-favs-btn {
+    display: none;
+  }
   &__add-to-cart-btn {
     position: absolute;
     top: 50%;
@@ -15,6 +18,9 @@
     transition: 0.3s;
     padding: 7px 12px 4px;
     width: max-content;
+  }
+  &__img {
+    width: 216px;
   }
   &__info {
     padding: 8px;

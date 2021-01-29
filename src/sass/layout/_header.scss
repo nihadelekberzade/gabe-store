@@ -14,6 +14,7 @@
     display: flex;
     &--search {
       flex-basis: 1021px;
+      min-height: 43px;
       form {
         flex: 1;
         position: relative;
@@ -102,10 +103,15 @@
       color: $clr-primary;
       font-size: 18px;
     }
-
-    &__title {
-      margin-bottom: 25px;
+    &--colored .menu__title {
+      color: $clr-primary;
     }
+    &__title {
+      font-size: 18px;
+      margin-bottom: 25px;
+      color: rgba($color: #fff, $alpha: 0.5);
+    }
+
     &__item {
       &:not(:last-child) {
         margin-bottom: 25px;

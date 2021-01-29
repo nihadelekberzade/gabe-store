@@ -60,15 +60,33 @@ const Popup = ({ isActive, switchPopup }) => {
               </li>
             </ul>
           </div>
+          <div className="menu">
+            <h2 className="menu__title">ЛИДЕРЫ ПРОДАЖ</h2>
+            <ul className="menu__list">
+              <li className="menu__item">
+                <a href="/">ЛИДЕРЫ ПРОДАЖ</a>
+              </li>
+              <li className="menu__item">
+                <a href="/">ЛИДЕРЫ ПРОДАЖ</a>
+              </li>
+              <li className="menu__item">
+                <a href="/">ЛИДЕРЫ ПРОДАЖ</a>
+              </li>
+              <li className="menu__item">
+                <a href="/">ЛИДЕРЫ ПРОДАЖ</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-const Header = () => {
+function Header() {
   const [isPopupActive, setIsPopupActive] = useState(false);
   const switchPopup = () => {
+    document.querySelector("body").classList.toggle("body--fixed");
     setIsPopupActive(!isPopupActive);
   };
   return (
@@ -167,6 +185,6 @@ const Header = () => {
       <Popup isActive={isPopupActive} switchPopup={switchPopup} />
     </header>
   );
-};
+}
 
 export default Header;

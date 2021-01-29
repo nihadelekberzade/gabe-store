@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Data from "../db/ourchoice.json";
 import { images } from "../img/images";
+
 const ChoiceCard = ({ url, title, price, discount, imageUrl }) => (
   <a href={url} className="choice-card">
     <div className="choice-card__img">
@@ -40,7 +41,7 @@ const OurChoice = () => {
 
   return (
     <section className="ourchoice">
-      <div className="wrapper">
+      <div className="container">
         <h2 className="section-title">НАШ ВЫБОР</h2>
         <div className="ourchoice__inner">
           <div className="slider">

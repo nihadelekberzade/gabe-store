@@ -17,6 +17,14 @@ body {
   color: #fff;
   font-family: "Montserrat", sans-serif;
 }
+::-webkit-scrollbar {
+  display: none;
+}
+.body {
+  &--fixed {
+    overflow: hidden;
+  }
+}
 ul,
 ol {
   list-style: none;
