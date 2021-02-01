@@ -1,11 +1,27 @@
 .promo {
   min-height: 100vh;
-  background-color: darkslategrey;
+  background-image: url("../../img/749807.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding-bottom: 50px;
-
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($color: #000000, $alpha: 0.4);
+  }
+  &__content {
+    display: flex;
+    justify-content: flex-end;
+  }
   &__hits {
     display: flex;
     align-items: center;
@@ -32,7 +48,7 @@
     }
     .slider {
       width: 720px;
-      min-height: 383px;
+      min-height: 390px;
       &__slide {
         transition-delay: 1s;
         &--active {

@@ -24,7 +24,7 @@
   &__list {
     display: flex;
     flex-wrap: wrap;
-    position: absolute;
+    margin-bottom: 30px;
   }
   &__list-item {
     flex-basis: calc((100% - 160px) / 5);
