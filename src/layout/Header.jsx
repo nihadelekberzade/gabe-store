@@ -83,7 +83,7 @@ const Popup = ({ isActive, switchPopup }) => {
   );
 };
 
-function Header() {
+const Header = () => {
   const [isPopupActive, setIsPopupActive] = useState(false);
   const switchPopup = () => {
     document.querySelector("body").classList.toggle("body--fixed");
@@ -164,7 +164,7 @@ function Header() {
           </div>
           <form>
             <input className="header__input" type="text" />
-            <button className="header__search-btn" />
+            <span className="header__search-btn" />
           </form>
         </div>
         <div className="header__container header__container--icons">
@@ -185,6 +185,6 @@ function Header() {
       <Popup isActive={isPopupActive} switchPopup={switchPopup} />
     </header>
   );
-}
+};
 
 export default Header;

@@ -53,16 +53,14 @@
   }
   &__search-btn {
     position: absolute;
+    top: 50%;
     right: 16px;
-    background: 0 0;
     background-image: url("https://gabestore.ru/images/sprite/sprite-1c4b8afc.svg");
     background-position: 45.833333333333336% 36.21399176954733%;
-    width: 24px;
+    width: 25px;
     height: 25px;
-    border: 0;
-    top: 50%;
-    display: block;
     transform: translateY(-50%);
+    cursor: pointer;
   }
   &__icon {
     width: 30px;

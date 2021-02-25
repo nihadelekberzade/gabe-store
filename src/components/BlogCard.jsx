@@ -7,7 +7,7 @@ const BlogCard = ({ imageUrl, blogLink, blogType, blogDate, blogTitle, blogSubti
     </a>
     <div className="blogcard__info">
       <h5 className="blogcard__type">{blogType}</h5>
-      <h5 className="blogcard__date">{blogDate}</h5>
+      <h4 className="blogcard__date">{blogDate}</h4>
     </div>
     <a className="blogcard__title" href={blogLink}>
       {blogTitle}
