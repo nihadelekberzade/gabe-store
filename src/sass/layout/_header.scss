@@ -13,8 +13,7 @@
   &__container {
     display: flex;
     &--search {
-      flex-basis: 1021px;
-      min-height: 43px;
+      flex-basis: calc((1021 / 1920) * 100%);
       form {
         flex: 1;
         position: relative;
@@ -23,20 +22,14 @@
         width: 100%;
         height: 100%;
         border-radius: 100px;
-        background-color: orange;
         background: linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
         border-radius: 35px;
         padding: 8px 26px;
         color: #000;
-
         &:focus {
           background-color: #fff;
         }
       }
-    }
-    &--icons {
-      justify-content: flex-end;
-      column-gap: 27px;
     }
   }
   &__btn {
@@ -64,7 +57,9 @@
   }
   &__icon {
     width: 30px;
-    height: 30px;
+    &:not(:last-child) {
+      margin-right: 27px;
+    }
   }
 }
 .popup {
@@ -76,7 +71,7 @@
   z-index: -1;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s;
+  transition: all 0.3s;
   &__inner {
     display: flex;
     height: 100%;
@@ -90,8 +85,7 @@
   }
   &__content {
     flex: 1;
-    padding: 125px 40px;
-    padding-left: 125px;
+    padding: 125px 40px 0 125px;
     display: flex;
     background-color: rgba($color: #000000, $alpha: 0.9);
   }
@@ -109,7 +103,6 @@
       margin-bottom: 25px;
       color: rgba($color: #fff, $alpha: 0.5);
     }
-
     &__item {
       &:not(:last-child) {
         margin-bottom: 25px;

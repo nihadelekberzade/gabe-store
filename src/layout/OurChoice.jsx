@@ -3,23 +3,23 @@ import Data from "../db/ourchoice.json";
 import { images } from "../img/images";
 
 const ChoiceCard = ({ url, title, price, discount, imageUrl }) => (
-  <div className="choice-card">
+  <a className="choice-card" href={url}>
     <div className="choice-card__img">
       <img src={imageUrl} alt="choice card img" />
     </div>
     <div className="choice-card__inner">
-      <div className="choice-card__info">
+      <div className="choice-card__content">
         <h2 className="choice-card__title">{title}</h2>
-        <div className="choice-card__price">
-          <h3 className="choice-card__price-current">{price}$</h3>
-          <h3 className="choice-card__price-discount">{discount}%</h3>
-          <a className="btn btn--primary choice-card__price-cart-btn" href="/">
+        <div className="choice-card__info">
+          <h3 className="choice-card__price">{price}$</h3>
+          <h3 className="choice-card__discount">{discount}%</h3>
+          <a className="choice-card__cart-btn btn btn--primary" href="/">
             В корзину
           </a>
         </div>
       </div>
     </div>
-  </div>
+  </a>
 );
 
 const OurChoice = () => {
@@ -38,7 +38,6 @@ const OurChoice = () => {
       setSliderIndex(sliderIndex + value);
     }
   };
-
   return (
     <section className="ourchoice">
       <div className="container">
@@ -69,7 +68,7 @@ const OurChoice = () => {
               <img src={images.down_arrow} alt="arrow" />
             </div>
             <div className="control__progressbar">
-              <div className="control__progressbar-value" style={{ top: `${25 * sliderIndex}%` }}></div>
+              <div className="control__progressbar-value" style={{ top: `${(100 / sliders.length) * sliderIndex}%` }}></div>
             </div>
             <div className="control__btn control__btn--down" onClick={() => handleControlBtnClick(1)}>
               <img src={images.down_arrow} alt="arrow" />
