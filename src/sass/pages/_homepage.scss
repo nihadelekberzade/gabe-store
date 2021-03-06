@@ -48,10 +48,12 @@
   .blogs {
     .blog-list {
       display: flex;
+      flex-wrap: wrap;
       margin-bottom: 80px;
       & > * {
+        width: calc(100% / 3 - 32px);
         margin: 0 16px;
-        flex: 1;
+        min-width: 200px;
       }
     }
   }

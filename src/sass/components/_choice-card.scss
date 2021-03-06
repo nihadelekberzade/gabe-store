@@ -6,13 +6,7 @@
   border: 2px solid transparent;
   border-radius: 11px;
   overflow: hidden;
-  &:hover {
-    border-color: $clr-primary;
-  }
-  &:hover &__price-cart-btn {
-    visibility: visible;
-    opacity: 1;
-  }
+
   &__inner {
     height: 100%;
     display: flex;
@@ -67,6 +61,13 @@
     margin: 0 0 0 auto;
     transition: 0.3s;
     opacity: 0;
-    overflow: hidden;
+    visibility: hidden;
+  }
+  &:hover {
+    border-color: $clr-primary;
+  }
+  &:hover &__cart-btn {
+    visibility: visible;
+    opacity: 1;
   }
 }

@@ -4,9 +4,9 @@ import { images } from "../img/images";
 
 const ChoiceCard = ({ url, title, price, discount, imageUrl }) => (
   <a className="choice-card" href={url}>
-    <div className="choice-card__img">
+    <a className="choice-card__img" href={url}>
       <img src={imageUrl} alt="choice card img" />
-    </div>
+    </a>
     <div className="choice-card__inner">
       <div className="choice-card__content">
         <h2 className="choice-card__title">{title}</h2>
@@ -24,56 +24,70 @@ const ChoiceCard = ({ url, title, price, discount, imageUrl }) => (
 
 const OurChoice = () => {
   const [choiceCards, setChoiceCards] = useState([]);
-  const [sliderIndex, setSliderIndex] = useState(0);
-  const sliders = [1, 2, 3, 4];
+  const [currentCards, setCurrentCards] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   useEffect(() => {
     setChoiceCards(Data.choiceCards);
+    let tempCards = [];
+    for (let i = 0; i < 4; i++) {
+      tempCards.push(Data.choiceCards[i]);
+    }
+    setCurrentCards(tempCards);
   }, []);
   const handleControlBtnClick = (value) => {
-    if (sliderIndex + value === 4) {
-      setSliderIndex(0);
-    } else if (sliderIndex + value === -1) {
-      setSliderIndex(3);
+    const slider__slide = document.querySelector(".ourchoice").querySelector(".slider__slide");
+    slider__slide.classList.add("slider__slide--hidden");
+    let tempIndex = currentIndex;
+    if (currentIndex + value === 4) {
+      setCurrentIndex(0);
+      tempIndex = 0;
+    } else if (currentIndex + value === -1) {
+      setCurrentIndex(3);
+      tempIndex = 3;
     } else {
-      setSliderIndex(sliderIndex + value);
+      setCurrentIndex(currentIndex + value);
+      tempIndex += value;
     }
+    let tempCards = [];
+    for (let i = tempIndex * 4; i < (tempIndex + 1) * 4; i++) {
+      tempCards.push(choiceCards[i]);
+    }
+    setTimeout(() => {
+      setCurrentCards(tempCards);
+      slider__slide.classList.remove("slider__slide--hidden");
+    }, 1000);
   };
+  const getControls = () => (
+    <div className="control">
+      <div className="control__btn control__btn--up" onClick={() => handleControlBtnClick(-1)}>
+        <img src={images.down_arrow} alt="arrow" />
+      </div>
+      <div className="control__progressbar">
+        <div className="control__progressbar-value" style={{ top: `${25 * currentIndex}%` }}></div>
+      </div>
+      <div className="control__btn control__btn--down" onClick={() => handleControlBtnClick(1)}>
+        <img src={images.down_arrow} alt="arrow" />
+      </div>
+    </div>
+  );
   return (
     <section className="ourchoice">
       <div className="container">
         <h2 className="section-title">НАШ ВЫБОР</h2>
         <div className="ourchoice__inner">
           <div className="slider">
-            {sliders.map((_, i) => {
-              return (
-                <div className={`slider__slide ${sliderIndex === i ? `slider__slide--active` : ``}`} key={i}>
-                  <ul className="ourchoice__list">
-                    {choiceCards.map((card, index) => {
-                      if (index >= i * 4 && index < (i + 1) * 4) {
-                        return (
-                          <li className={`ourchoice__list-item ourchoice__list-item--${(index % 4) + 1}`} key={index}>
-                            <ChoiceCard title={card.title} price={card.price} discount={card.discount} imageUrl={card.imageUrl} url={card.url} />
-                          </li>
-                        );
-                      }
-                      return <React.Fragment key={index}></React.Fragment>;
-                    })}
-                  </ul>
-                </div>
-              );
-            })}
-          </div>
-          <div className="control">
-            <div className="control__btn control__btn--up" onClick={() => handleControlBtnClick(-1)}>
-              <img src={images.down_arrow} alt="arrow" />
-            </div>
-            <div className="control__progressbar">
-              <div className="control__progressbar-value" style={{ top: `${(100 / sliders.length) * sliderIndex}%` }}></div>
-            </div>
-            <div className="control__btn control__btn--down" onClick={() => handleControlBtnClick(1)}>
-              <img src={images.down_arrow} alt="arrow" />
+            <div className="slider__slide">
+              <ul className="ourchoice__list">
+                {currentCards.map((card, index) => (
+                  <li className={`ourchoice__list-item ourchoice__list-item--${index}`} key={index}>
+                    <ChoiceCard title={card.title} price={card.price} discount={card.discount} imageUrl={card.imageUrl} url={card.url} />
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
+          {getControls()}
         </div>
       </div>
     </section>

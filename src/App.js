@@ -6,14 +6,13 @@ import HomePage from './pages/HomePage';
 import './sass/css/style.scss';
 
 
-const App = () => {
-  return (
-    <>
-      <Header />
-      <Promo />
-      <HomePage />
-      <Footer />
-    </>
-  );
-}
+const App = () => (
+  <>
+    <Header />
+    <Promo />
+    <HomePage />
+    <Footer />
+  </>
+);
+
 export default App;

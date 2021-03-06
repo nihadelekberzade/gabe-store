@@ -1,6 +1,7 @@
 .catalog {
   &__tabs {
     display: flex;
+    align-items: center;
     justify-content: center;
     margin-bottom: 40px;
   }
@@ -9,25 +10,37 @@
     padding: 5px 12px 3px;
     text-transform: uppercase;
     border: 1px solid transparent;
+    text-align: center;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: 0.3s;
     border-radius: 6px;
-
     &--active {
       background-color: rgba(251, 187, 67, 0.3);
+      border: 1px solid #fbbb43;
     }
   }
   &__content {
-    position: relative;
-    min-height: 500px;
+    transition: opacity 0.3s;
+    padding: 0 15px;
+    &--hidden {
+      opacity: 0;
+    }
   }
   &__list {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
+    @media only screen and (max-width: 1024px) {
+      flex-wrap: nowrap;
+    }
   }
   &__list-item {
-    flex-basis: calc((100% - 160px) / 5);
+    width: calc(100% / 5 - 32px);
+    min-width: 156px;
     margin: 0 16px 32px;
+    @media only screen and (max-width: 1280px) {
+      width: calc(100% / 5 - 16px);
+      margin: 0 8px 32px;
+    }
   }
 }

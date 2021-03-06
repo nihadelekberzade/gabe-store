@@ -3,113 +3,113 @@
     {
       "title": "Star Wars: Battlefront 2",
       "price": 23.96,
-      "discount": "12",
+      "discount": 12,
       "imageUrl": "https://static.gabestore.ru/product/QKHTohFTK72nPIOhVr5y1kY6O3J_iG5h.jpg",
       "url": "/red-dead-redemption-2"
     },
     {
       "title": "Rainbow Six Siege",
       "price": 12.96,
-      "discount": "67",
+      "discount": 67,
       "imageUrl": "https://static.gabestore.ru/product/UWTcq8mGlGJ7FYTIixFWAtxBtWpyObQz.jpg",
       "url": "/red-dead-redemption-2"
     },
     {
       "title": "Dark Souls III",
       "price": 7.96,
-      "discount": "70",
+      "discount": 70,
       "imageUrl": "https://static.gabestore.ru/product/1Ze1yEWlh_ea0sIA7GNWW77XHp5zpB5T.jpg",
       "url": "/red-dead-redemption-2"
     },
     {
       "title": "Sid Meier’s Civilization VI – Rise and Fall",
       "price": 3.96,
-      "discount": "42",
+      "discount": 42,
       "imageUrl": "https://static.gabestore.ru/product/oFJBHpQUf0TDCYsVnUJn0CGGR2vqKrw_.jpg",
       "url": "/red-dead-redemption-2"
     },
     {
       "title": "Rainbow Six Siege",
       "price": 12.96,
-      "discount": "67",
+      "discount": 67,
       "imageUrl": "https://static.gabestore.ru/product/UWTcq8mGlGJ7FYTIixFWAtxBtWpyObQz.jpg",
       "url": "/red-dead-redemption-2"
     },
     {
       "title": "Dark Souls III",
       "price": 7.96,
-      "discount": "70",
+      "discount": 70,
       "imageUrl": "https://static.gabestore.ru/product/1Ze1yEWlh_ea0sIA7GNWW77XHp5zpB5T.jpg",
       "url": "/red-dead-redemption-2"
     },
     {
       "title": "Sid Meier’s Civilization VI – Rise and Fall",
       "price": 3.96,
-      "discount": "42",
+      "discount": 42,
       "imageUrl": "https://static.gabestore.ru/product/oFJBHpQUf0TDCYsVnUJn0CGGR2vqKrw_.jpg",
       "url": "/red-dead-redemption-2"
     },
     {
       "title": "Red Dead Redemption 2",
       "price": 12.96,
-      "discount": "67",
+      "discount": 67,
       "imageUrl": "https://static.gabestore.ru/product/tb-051MUpwLdqyHt8J7qGloUF2QMT-ZX.jpg",
       "url": "/red-dead-redemption-2"
     },
     {
       "title": "Dark Souls III",
       "price": 7.96,
-      "discount": "70",
+      "discount": 70,
       "imageUrl": "https://static.gabestore.ru/product/1Ze1yEWlh_ea0sIA7GNWW77XHp5zpB5T.jpg",
       "url": "/red-dead-redemption-2"
     },
     {
       "title": "Sid Meier’s Civilization VI – Rise and Fall",
       "price": 3.96,
-      "discount": "42",
+      "discount": 42,
       "imageUrl": "https://static.gabestore.ru/product/oFJBHpQUf0TDCYsVnUJn0CGGR2vqKrw_.jpg",
       "url": "/red-dead-redemption-2"
     },
     {
       "title": "Rainbow Six Siege",
       "price": 12.96,
-      "discount": "67",
+      "discount": 67,
       "imageUrl": "https://static.gabestore.ru/product/UWTcq8mGlGJ7FYTIixFWAtxBtWpyObQz.jpg",
       "url": "/red-dead-redemption-2"
     },
     {
-      "title": "Dark Souls III",
-      "price": 7.96,
-      "discount": "70",
-      "imageUrl": "https://static.gabestore.ru/product/1Ze1yEWlh_ea0sIA7GNWW77XHp5zpB5T.jpg",
+      "title": "Red Dead Redemption 2",
+      "price": 12.96,
+      "discount": 67,
+      "imageUrl": "https://static.gabestore.ru/product/tb-051MUpwLdqyHt8J7qGloUF2QMT-ZX.jpg",
       "url": "/red-dead-redemption-2"
     },
     {
       "title": "Sid Meier’s Civilization VI – Rise and Fall",
       "price": 3.96,
-      "discount": "42",
+      "discount": 42,
       "imageUrl": "https://static.gabestore.ru/product/oFJBHpQUf0TDCYsVnUJn0CGGR2vqKrw_.jpg",
       "url": "/red-dead-redemption-2"
     },
     {
       "title": "Rainbow Six Siege",
       "price": 12.96,
-      "discount": "67",
+      "discount": 67,
       "imageUrl": "https://static.gabestore.ru/product/UWTcq8mGlGJ7FYTIixFWAtxBtWpyObQz.jpg",
       "url": "/red-dead-redemption-2"
     },
     {
       "title": "Dark Souls III",
       "price": 7.96,
-      "discount": "70",
+      "discount": 70,
       "imageUrl": "https://static.gabestore.ru/product/1Ze1yEWlh_ea0sIA7GNWW77XHp5zpB5T.jpg",
       "url": "/red-dead-redemption-2"
     },
     {
-      "title": "Sid Meier’s Civilization VI – Rise and Fall",
-      "price": 3.96,
-      "discount": "42",
-      "imageUrl": "https://static.gabestore.ru/product/oFJBHpQUf0TDCYsVnUJn0CGGR2vqKrw_.jpg",
+      "title": "Red Dead Redemption 2",
+      "price": 12.96,
+      "discount": 67,
+      "imageUrl": "https://static.gabestore.ru/product/tb-051MUpwLdqyHt8J7qGloUF2QMT-ZX.jpg",
       "url": "/red-dead-redemption-2"
     }
   ]
