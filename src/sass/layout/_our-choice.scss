@@ -4,7 +4,6 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 60px;
-
     @media only screen and (max-width: 1280px) {
       display: block;
     }
@@ -59,10 +58,12 @@
     }
   }
   .control {
+    margin-left: 40px;
     &__progressbar-value {
       height: 25%;
     }
     @media only screen and (max-width: 1280px) {
+      margin-left: 0;
       width: auto;
       height: auto;
       flex-direction: row;

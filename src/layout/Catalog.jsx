@@ -18,6 +18,11 @@ const Catalog = () => {
   };
   useEffect(() => {
     setGames(Catalog_DB.catalog);
+    let tempGames = [];
+    for (let i = 0; i < 10; i++) {
+      tempGames.push(Catalog_DB.catalog[i]);
+    }
+    setCurrentGames(tempGames);
   }, []);
 
   const getTabs = () => (
@@ -32,7 +37,7 @@ const Catalog = () => {
   const getContent = () => (
     <div className="catalog__content">
       <ul className="catalog__list">
-        {games.map((t, i) => (
+        {currentGames.map((t, i) => (
           <li className="catalog__list-item" key={i}>
             <GameCard imageUrl={t.imageUrl} title={t.title} price={t.price} discount={t.discount} url={t.url} />
           </li>

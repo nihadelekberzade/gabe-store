@@ -32,6 +32,9 @@
   &__subtitle {
     margin-bottom: 16px;
   }
+  &__stats {
+    display: none;
+  }
   &:hover &__img {
     box-shadow: 0 0 0 2px $clr-primary;
   }

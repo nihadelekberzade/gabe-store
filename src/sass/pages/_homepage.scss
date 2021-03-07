@@ -52,8 +52,8 @@
       margin-bottom: 80px;
       & > * {
         width: calc(100% / 3 - 32px);
-        margin: 0 16px;
         min-width: 200px;
+        margin: 0 16px;
       }
     }
   }
