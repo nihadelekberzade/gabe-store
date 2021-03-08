@@ -111,6 +111,9 @@
     &:hover {
       border-color: #fff;
     }
+    &--disabled {
+      pointer-events: none;
+    }
   }
   &__progressbar {
     width: 1px;

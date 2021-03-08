@@ -9,14 +9,14 @@ const GameCard = ({ imageUrl, url, title, price, discount }) => (
     <a href={url}>
       <img src={imageUrl} alt="game cover img" className="gamecard__img" />
     </a>
-    <div className="gamecard__info">
+    <div className="gamecard__content">
       <a className="gamecard__name" href={url}>
         {title}
       </a>
-      <a className="gamecard__price" href={url}>
-        <h3 className="gamecard__price-current">{price} $</h3>
-        <h4 className="gamecard__price-discount">{discount}%</h4>
-      </a>
+      <div className="gamecard__info">
+        <h3 className="gamecard__price">{price} $</h3>
+        <h4 className="gamecard__discount">{discount}%</h4>
+      </div>
     </div>
   </div>
 );

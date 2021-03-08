@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
 import Data from "../db/ourchoice.json";
 import { images } from "../img/images";
+import PropTypes from "prop-types";
 
 const ChoiceCard = ({ url, title, price, discount, imageUrl }) => (
-  <a className="choice-card" href={url}>
+  <div className="choice-card">
     <a className="choice-card__img" href={url}>
       <img src={imageUrl} alt="choice card img" />
     </a>
     <div className="choice-card__inner">
       <div className="choice-card__content">
-        <h2 className="choice-card__title">{title}</h2>
+        <a className="choice-card__title" href={url}>
+          {title}
+        </a>
         <div className="choice-card__info">
           <h3 className="choice-card__price">{price}$</h3>
           <h3 className="choice-card__discount">{discount}%</h3>
@@ -19,9 +22,15 @@ const ChoiceCard = ({ url, title, price, discount, imageUrl }) => (
         </div>
       </div>
     </div>
-  </a>
+  </div>
 );
-
+ChoiceCard.propTypes = {
+  url: PropTypes.string,
+  title: PropTypes.string,
+  price: PropTypes.number,
+  discount: PropTypes.number,
+  imageUrl: PropTypes.string,
+};
 const OurChoice = () => {
   const [choiceCards, setChoiceCards] = useState([]);
   const [currentCards, setCurrentCards] = useState([]);
@@ -38,6 +47,11 @@ const OurChoice = () => {
   const handleControlBtnClick = (value) => {
     const slider__slide = document.querySelector(".ourchoice").querySelector(".slider__slide");
     slider__slide.classList.add("slider__slide--hidden");
+    const buttons = document.querySelector(".ourchoice").querySelectorAll(".control__btn");
+    buttons.forEach((e) => {
+      e.classList.add("control__btn--disabled");
+    });
+
     let tempIndex = currentIndex;
     if (currentIndex + value === 4) {
       setCurrentIndex(0);
@@ -56,7 +70,10 @@ const OurChoice = () => {
     setTimeout(() => {
       setCurrentCards(tempCards);
       slider__slide.classList.remove("slider__slide--hidden");
-    }, 1000);
+      buttons.forEach((e) => {
+        e.classList.remove("control__btn--disabled");
+      });
+    }, 1200);
   };
   const getControls = () => (
     <div className="control">
