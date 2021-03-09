@@ -1,0 +1,52 @@
+.gamepage {
+  .navigation {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    &__link {
+      margin: 0 16px;
+      font-size: 10px;
+    }
+    .line {
+      flex: 1;
+      height: 1px;
+      background: red;
+      &--small {
+        flex: 0 0 17px;
+      }
+    }
+  }
+  .versions {
+    &__inner {
+      padding-bottom: 40px;
+      display: flex;
+    }
+    .version {
+      margin: 0 16px;
+      padding: 12px;
+      background: red;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      flex-basis: 276px;
+
+      &__price {
+        margin-top: 5px;
+      }
+    }
+  }
+  .row {
+    display: flex;
+  }
+  .card {
+    &__available {
+      &-list {
+        display: flex;
+        list-style: disc;
+      }
+      &-item {
+        margin: 0 12px;
+        padding: 0 12px;
+      }
+    }
+  }
+}

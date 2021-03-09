@@ -73,6 +73,9 @@
         display: none;
       }
       &__btn {
+        img {
+          margin-top: 3px;
+        }
         &--up {
           transform: rotate(90deg);
           margin-right: 40px;

@@ -10,17 +10,17 @@ const Catalog = () => {
   const content = document.querySelector(".catalog__content");
 
   const changeCurrentIndex = (newIndex) => {
-    console.log(newIndex);
     content.classList.add("catalog__content--hidden");
     setCurrentIndex(newIndex);
-    console.log(games);
     setTimeout(() => {
       let tempGames = [];
-      for (let i = newIndex * 5; i < (newIndex + 1) * 5; i++) {
-        console.log(i);
+      // for (let i = newIndex * 5; i < (newIndex + 1) * 5; i++) {
+      //   console.log(i);
+      //   tempGames.push(games[i]);
+      // }
+      for (let i = 0; i < 5; i++) {
         tempGames.push(games[i]);
       }
-      console.log(tempGames);
       setCurrentGames(tempGames);
       content.classList.remove("catalog__content--hidden");
     }, 300);

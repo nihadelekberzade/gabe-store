@@ -70,10 +70,12 @@ const OurChoice = () => {
     setTimeout(() => {
       setCurrentCards(tempCards);
       slider__slide.classList.remove("slider__slide--hidden");
+    }, 1200);
+    setTimeout(() => {
       buttons.forEach((e) => {
         e.classList.remove("control__btn--disabled");
       });
-    }, 1200);
+    }, 2200);
   };
   const getControls = () => (
     <div className="control">
