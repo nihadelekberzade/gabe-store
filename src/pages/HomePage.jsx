@@ -2,8 +2,9 @@ import React from "react";
 import BlogCard from "../components/BlogCard";
 import Catalog from "../layout/Catalog";
 import OurChoice from "../layout/OurChoice";
+import Promo from "../layout/Promo";
 
-function Advantages() {
+const Advantages = () => {
   const advantages = [
     {
       imageUrl: "https://gabestore.ru/images/Gabestore_icons_discounts.png",
@@ -47,8 +48,8 @@ function Advantages() {
       </div>
     </section>
   );
-}
-function Blogs() {
+};
+const Blogs = () => {
   const articles = [
     {
       imageUrl: "https://static.gabestore.ru/blog_content/465x275_JZ6Q3aPpg8-V9lw0Ee_Ecpvw34Y1JPbp.jpg",
@@ -110,16 +111,16 @@ function Blogs() {
       </div>
     </section>
   );
-}
+};
 
-function HomePage() {
-  return (
-    <main className="homepage">
-      <Advantages />
-      <Catalog />
-      <OurChoice />
-      <Blogs />
-    </main>
-  );
-}
+const HomePage = () => (
+  <main className="homepage">
+    <Promo />
+    <Advantages />
+    <Catalog />
+    <OurChoice />
+    <Blogs />
+  </main>
+);
+
 export default HomePage;

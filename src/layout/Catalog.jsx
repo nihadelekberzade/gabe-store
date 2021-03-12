@@ -8,7 +8,6 @@ const Catalog = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const tabs = ["Новинки", "Лидеры продаж", "Последние поступления", "Предзаказы"];
   const content = document.querySelector(".catalog__content");
-
   const changeCurrentIndex = (newIndex) => {
     content.classList.add("catalog__content--hidden");
     setCurrentIndex(newIndex);
@@ -33,7 +32,6 @@ const Catalog = () => {
     setGames(Catalog_DB.catalog);
     setCurrentGames(tempGames);
   }, []);
-
   const getTabs = () => (
     <div className="catalog__tabs">
       {tabs.map((t, i) => (

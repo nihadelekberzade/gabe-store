@@ -27,20 +27,11 @@
     }
   }
   &__list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     margin-bottom: 15px;
-    @media only screen and (max-width: 1024px) {
-      flex-wrap: nowrap;
-    }
   }
   &__list-item {
-    width: calc(100% / 5 - 32px);
-    min-width: 156px;
     margin: 0 16px 32px;
-    @media only screen and (max-width: 1280px) {
-      width: calc(100% / 5 - 16px);
-      margin: 0 8px 32px;
-    }
   }
 }
