@@ -29,9 +29,7 @@
   &__list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    margin-bottom: 15px;
-  }
-  &__list-item {
-    margin: 0 16px 32px;
+    gap: 32px;
+    margin-bottom: 40px;
   }
 }
