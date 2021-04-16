@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 const GameCard = ({ imageUrl, url, title, price, discount }) => (
   <div className="gamecard">
     <img className="gamecard__add-to-favs-btn" alt="favourite btn" />

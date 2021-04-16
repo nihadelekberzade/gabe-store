@@ -1,8 +1,8 @@
 import React from "react";
 import BlogCard from "../components/BlogCard";
-import Catalog from "../layout/Catalog";
 import OurChoice from "../layout/OurChoice";
 import Promo from "../layout/Promo";
+import Catalog1 from "../layout/Catalog";
 
 const Advantages = () => {
   const advantages = [
@@ -117,7 +117,7 @@ const HomePage = () => (
   <main className="homepage">
     <Promo />
     <Advantages />
-    <Catalog />
+    <Catalog1 />
     <OurChoice />
     <Blogs />
   </main>
